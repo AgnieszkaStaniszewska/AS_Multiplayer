@@ -69,8 +69,8 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 //join an existing room and add yourself as player2
-                int position = 0;
-                roomName = roomsList.get(position);
+               // int position = 0;
+                roomName = roomsList.get(i);
                 roomRef = database.getReference("rooms/" + roomName + "/player2");
                 addRoomEventListener();
                 roomRef.setValue(playerName);

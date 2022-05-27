@@ -72,26 +72,26 @@ public class MainActivity3 extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 //message received
-                if(role.equals("host")){
-                    if(snapshot.getValue(String.class).contains("guest:")){
+                if (role.equals("host")) {
+                    if (snapshot.getValue(String.class).contains("guest:")) {
                         button.setEnabled(true);
                         Toast.makeText(MainActivity3.this, "" +
                                 snapshot.getValue(String.class).replace("guest:", ""), Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    if(snapshot.getValue(String.class).contains("host")){
+                    if (snapshot.getValue(String.class).contains("host")) {
                         button.setEnabled(true);
                         Toast.makeText(MainActivity3.this, "" +
                                 snapshot.getValue(String.class).replace("host", ""), Toast.LENGTH_SHORT).show();
                     }
                 }
-
+            }
                 @Override
-                public void onCancelled(@NonNull DatabaseError error) {
+                public void onCancelled (@NonNull DatabaseError error){
                     //error
                     messageRef.setValue(message);
                 }
-            });
-    }
 
-}
+            });
+        }
+    }
